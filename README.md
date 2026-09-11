@@ -116,11 +116,14 @@ If you are starting up Resonite after using VRC, you will need to restart OscAvM
 
 ## Building from Source
 
-We recommend using `rustup`. If your compile is failing, try updating your toolchain using `rustup update stable`.
+We recommend using the rust and cargo packages provided by the OS.
+
 
 ```bash
 cargo build --release
 ```
+
+If the build is failing, check you Rust version using `rustc --version`. If the reported version is below 1.86, try with Rustup instead.
 
 Notes for ALVR: By default, OscAvMgr build for ALVR branch `v20`, which has the latest 20.x release.
 
