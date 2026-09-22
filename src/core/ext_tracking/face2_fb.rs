@@ -346,7 +346,29 @@ pub(crate) fn face2_fb_to_unified(face_fb: &[f32]) -> Option<UnifiedShapes> {
     );
 
     if face_fb.len() >= Face2Fb::Max as usize {
-        shapes.setu(UnifiedExpressions::TongueOut, getf2(Face2Fb::TongueOut));
+        // The Quest Pro tongue module repurposes the FB tongue slots. Its
+        // layout matches Android XR rather than the normal FB semantics:
+        // 63 = out, 64 = left, 65 = right, 66 = up, 67 = down.
+        shapes.setu(
+            UnifiedExpressions::TongueOut,
+            getf2(Face2Fb::TongueTipInterdental),
+        );
+        shapes.setu(
+            UnifiedExpressions::TongueLeft,
+            getf2(Face2Fb::TongueTipAlveolar),
+        );
+        shapes.setu(
+            UnifiedExpressions::TongueRight,
+            getf2(Face2Fb::TongueFrontDorsalPalate),
+        );
+        shapes.setu(
+            UnifiedExpressions::TongueUp,
+            getf2(Face2Fb::TongueMidDorsalPalate),
+        );
+        shapes.setu(
+            UnifiedExpressions::TongueDown,
+            getf2(Face2Fb::TongueBackDorsalPalate),
+        );
         shapes.setu(
             UnifiedExpressions::TongueCurlUp,
             getf2(Face2Fb::TongueTipAlveolar),
