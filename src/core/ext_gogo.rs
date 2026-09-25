@@ -13,7 +13,7 @@ const FILE_NAME: &str = "extGogo.json";
 const STAND_PARAM: &str = "Go/StandIdle";
 const CROUCH_PARAM: &str = "Go/CrouchIdle";
 const PRONE_PARAM: &str = "Go/ProneIdle";
-const LOCO_PARAM: &str = "Go/Locomotion";
+const LOCO_PARAM: &str = "Go/Locomotionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
 const TRACKING_TYPE: &str = "TrackingType";
 
